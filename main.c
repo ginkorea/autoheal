@@ -184,7 +184,7 @@ int main(int argc, char **argv) {
     }
     stbi_image_free(img);
 
-    // 5) flood fill / auto-heal identical to your original code
+    // 5) flood fill / auto-heal
     int *q_x = malloc(sizeof(int)*PIXELS),
         *q_y = malloc(sizeof(int)*PIXELS);
     int  region_id=1;
@@ -242,7 +242,7 @@ int main(int argc, char **argv) {
         mask[i] = (idxbuf[i]==k?255:0);
       }
       // simple 1px smooth
-      // (reuse your smooth_mask function here)
+      // (reuse smooth_mask function here)
       smooth_mask(mask, IMG_W, IMG_H, 1);
 
       char fn[80];
